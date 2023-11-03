@@ -1,0 +1,17 @@
+.button-main{
+    background-color: #1500ff;
+    border: 2px solid #2980b9;
+    border-radius: 10px;
+    color: white;
+}
+
+.button-main.active{
+    background-color: #00eeff;
+}
+
+.button-seondary{
+    background-color: #113e68;
+    border:  2px solid #137139;
+    border-radius: 5px;
+color: white;
+}
