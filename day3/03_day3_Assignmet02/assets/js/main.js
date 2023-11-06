@@ -4,9 +4,11 @@ console.log(btech);
 btech
   .then((response) => response.json())
   .then((data) => {
+    const colorList= ["red","blue","green","orange","violet"]
     for (let i = 0; i < 10; i = i + 2){
-      let maindiv = document.createElement("div");
-      maindiv.classList.add("maindiv")
+      // let maindiv = document.createElement("div");
+      // maindiv.classList.add("maindiv")
+      let diffcolor = colorList[Math.floor(Math.random()*colorList.length)]
       let couseName = data.branches[i].name;
       let div = document.createElement("div");
       div.classList.add("card")
@@ -15,6 +17,8 @@ btech
       let p1 = document.createElement("p");
       let button = document.createElement("button");
       button.textContent = "apply now"
+      button.style.color = diffcolor;
+      h4.style.color =diffcolor
       h4.textContent = data.branches[i].short;
       p.textContent = data.branches[i].name;
       div.appendChild(h4);
@@ -22,11 +26,11 @@ btech
       p1.textContent = "Fees Starting at ₹700 per Subject";
       div.appendChild(button);
       div.appendChild(p1);
-      maindiv.appendChild(div);
+      query.appendChild(div);
       console.log(couseName);
 
 
-      
+      diffcolor = colorList[Math.floor(Math.random()*colorList.length)]
       couseName = data.branches[i+1].name;
       let div1 = document.createElement("div");
       div1.classList.add("card")
@@ -35,15 +39,17 @@ btech
       p1 = document.createElement("p");
       p1.textContent = "Fees Starting at ₹700 per Subject"
       button = document.createElement("button");
-      button.textContent="apply now"
+      button.textContent = "apply now"
+      button.style.color = diffcolor;
+      h4.style.color =diffcolor
       h4.textContent = data.branches[i+1].short;
       p.textContent = data.branches[i+1].name;
       div1.appendChild(h4);
       div1.appendChild(p);
       div1.appendChild(button)
       div1.appendChild(p1);
-      maindiv.appendChild(div1);
-      query.appendChild(maindiv);
+      // maindiv.appendChild(div1);
+      query.appendChild(div1);
       console.log(couseName);
     }
   });
